@@ -7,7 +7,7 @@ Prerequisites:
 * python
 * pip
 * node
-* npm
+* yarn
 
 After clone you should initialize and run dev servers:
 
