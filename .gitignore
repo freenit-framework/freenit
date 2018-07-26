@@ -1,3 +1,2 @@
-backend/
-frontend/
+services/
 vars.mk
