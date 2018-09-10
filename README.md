@@ -3,8 +3,7 @@
 Prerequisites:
 
 * tmux
-* vex
-* python
+* python-3.6
 * pip
 * node
 * yarn
