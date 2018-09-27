@@ -25,6 +25,8 @@ If you do use CBSD/Reggae, you should only run:
 # make
 # make login service=backend user=devel
 # /usr/src/bin/default_user.sh
+# logout
+# echo 'HTTP_PROXY=backend.<cbsd.domain>:5000' >services/frontend/project.conf
 # make devel
 ```
 
