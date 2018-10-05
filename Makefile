@@ -5,5 +5,5 @@ SERVICES = backend https://github.com/mekanix/backend-startkit \
 .include <${REGGAE_PATH}/mk/project.mk>
 
 
-collect:
-	bin/collect.sh
+collect: up
+	@bin/collect.sh
