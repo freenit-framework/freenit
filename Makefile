@@ -10,3 +10,6 @@ collect: up
 
 shell: up
 	@sudo cbsd jexec user=devel jname=backend /usr/src/bin/shell.sh
+
+print-virtualenv:
+	@make -C services/backend print-virtualenv
