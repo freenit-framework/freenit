@@ -15,4 +15,4 @@ fi
 
 rm -rf ${PROJECT_ROOT}/build/*
 cp -r ${PROJECT_ROOT}/services/backend/application/static "${PROJECT_ROOT}/build/"
-cp -r ${PROJECT_ROOT}/services/frontend/build/* "${PROJECT_ROOT}/build/"
+cp -r ${PROJECT_ROOT}/services/frontend/build/public/* "${PROJECT_ROOT}/build/"
