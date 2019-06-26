@@ -8,8 +8,8 @@ SERVICES = backend https://github.com/mekanix/backend-startkit \
 collect: up
 	@bin/collect.sh
 
-shell: up
-	@sudo cbsd jexec user=devel jname=backend /usr/src/bin/shell.sh
+shell:
+	@make -C services/backend shell
 
 print-virtualenv:
 	@make -C services/backend print-virtualenv
