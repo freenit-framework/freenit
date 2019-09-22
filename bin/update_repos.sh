@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export BIN_DIR=`dirname $0`
-export PROJECT_ROOT=`readlink -f "${BIN_DIR}/.."`
+export PROJECT_ROOT="${BIN_DIR}/.."
 SERVICES_ROOT="${PROJECT_ROOT}/services"
 
 cd "${SERVICES_ROOT}"
