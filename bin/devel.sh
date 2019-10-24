@@ -8,10 +8,16 @@ export backend_app_name=${app_name}
 . "${PROJECT_ROOT}/services/frontend/name.ini"
 export frontend_app_name=${app_name}
 export OFFLINE="${OFFLINE:=no}"
+export REGGAE="no"
 
 
-if [ -f /usr/local/bin/cbsd ]; then
-  backend_hostname=$(sudo cbsd jexec user=devel "jname=${backend_app_name}" hostname)
+if [ "${1}" = "reggae" ]; then
+  REGGAE="yes"
+fi
+
+
+if [ "${REGGAE}" = "yes" ]; then
+  backend_hostname=$(sudo cbsd jexec user=devel "jname=${backend_app_name}back" hostname)
   frontend_hostname=$(sudo cbsd jexec user=devel "jname=${frontend_app_name}front" hostname)
   sudo cbsd jexec user=devel jname="${backend_app_name}back" env OFFLINE=${OFFLINE} /usr/src/bin/init.sh
   sudo tmux new-session -s "web" -d "cbsd jexec user=devel jname=${backend_app_name}back env OFFLINE=${OFFLINE} /usr/src/bin/devel.sh"
