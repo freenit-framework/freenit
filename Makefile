@@ -1,6 +1,6 @@
 REGGAE_PATH = /usr/local/share/reggae
-SERVICES = backend https://github.com/mekanix/backend-startkit \
-	   frontend https://github.com/mekanix/frontend-startkit
+SERVICES = backend https://github.com/freenit-framework/backend \
+	   frontend https://github.com/freenit-framework/frontend
 
 
 collect: up
