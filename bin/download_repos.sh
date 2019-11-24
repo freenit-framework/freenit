@@ -8,8 +8,8 @@ if [ ! -d "${PROJECT_ROOT}/services" ]; then
 fi
 
 if [ ! -d "${PROJECT_ROOT}/services/backend" ]; then
-  git clone https://github.com/mekanix/backend-startkit "${PROJECT_ROOT}/services/backend"
+  git clone https://github.com/krlex/freenit-backend"${PROJECT_ROOT}/services/backend"
 fi
 if [ ! -d "${PROJECT_ROOT}/services/frontend" ]; then
-  git clone https://github.com/mekanix/frontend-startkit "${PROJECT_ROOT}/services/frontend"
+  git clone https://github.com/krlex/freenit-frontend"${PROJECT_ROOT}/services/frontend"
 fi
