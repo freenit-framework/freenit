@@ -2,3 +2,5 @@ build/*
 !build/.keep
 services/
 vars.mk
+*.vagrant/
+*.retry
