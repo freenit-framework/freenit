@@ -1,6 +1,7 @@
 build/*
-!build/.keep
 services/
+!build/.keep
 vars.mk
 *.vagrant/
 *.retry
+*.log
