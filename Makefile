@@ -3,8 +3,8 @@ SERVICES = backend https://github.com/freenit-framework/backend \
 	   frontend https://github.com/freenit-framework/frontend-startkit
 
 
-collect: up
-	@bin/collect.sh
+build: up
+	@bin/build.sh
 
 shell:
 	@make -C services/backend shell
