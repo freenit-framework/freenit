@@ -18,10 +18,10 @@ fi
 
 
 if [ "${REGGAE}" = "yes" ]; then
-  backend_hostname=$(sudo cbsd jexec user=devel "jname=${backend_app_name}back" hostname)
+  backend_hostname=$(sudo cbsd jexec user=devel "jname=${backend_app_name}" hostname)
   frontend_hostname=$(sudo cbsd jexec user=devel "jname=${frontend_app_name}front" hostname)
-  sudo cbsd jexec user=devel jname="${backend_app_name}back" env OFFLINE=${OFFLINE} SYSPKG=${SYSPKG} /usr/src/bin/init.sh
-  sudo tmux new-session -s "freenit" -d "cbsd jexec user=devel jname=${backend_app_name}back env OFFLINE=${OFFLINE} SYSPKG=${SYSPKG} /usr/src/bin/devel.sh"
+  sudo cbsd jexec user=devel jname="${backend_app_name}" env OFFLINE=${OFFLINE} SYSPKG=${SYSPKG} /usr/src/bin/init.sh
+  sudo tmux new-session -s "freenit" -d "cbsd jexec user=devel jname=${backend_app_name} env OFFLINE=${OFFLINE} SYSPKG=${SYSPKG} /usr/src/bin/devel.sh"
   sudo tmux split-window -h -p 50 -t 0 "cbsd jexec user=devel jname=${frontend_app_name}front env OFFLINE=${OFFLINE} BACKEND_URL=http://${backend_hostname}:5000 /usr/src/bin/devel.sh"
   sudo tmux a -t "freenit"
 else
