@@ -1,5 +1,6 @@
 SERVICES += lib https://github.com/freenit-framework/frontend
 CBSD_WORKDIR != sysrc -n cbsd_workdir
+LIB = YES
 
 lib:
 	@${MAKE} ${MAKEFLAGS} -C services/lib lib
