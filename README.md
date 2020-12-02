@@ -21,3 +21,7 @@ If you do use CBSD/Reggae, you should only run:
 ```
 
 It will download backend and frontend repos for you and do the rest of the magic.
+
+[Backend Tutorial](https://github.com/freenit-framework/backend-tutorial)
+
+[Frontend Tutorial](https://github.com/freenit-framework/frontend-tutorial)
