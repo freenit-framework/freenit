@@ -1,9 +1,9 @@
-# WEB startkit
+# Freenit Framework
 
 Prerequisites:
 
 * tmux
-* python-3.6
+* python
 * pip
 * node
 * yarn
