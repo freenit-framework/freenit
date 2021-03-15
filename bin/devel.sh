@@ -23,7 +23,7 @@ if [ "${REGGAE}" = "yes" ]; then
   sudo tmux new-session -s "${backend_app_name}" -d "make -C services/backend devel"
   sudo tmux split-window -h -p 50 -t 0 "make -C services/frontend BACKEND_URL=http://${backend_hostname}:5000 devel"
   if [ "${LIB}" != "no" ]; then
-    sudo tmux split-window -v -p 50 -t 1 "make -C services/lib BACKEND_URL=http://${backend_hostname}:5000 devel || sleep 60"
+    sudo tmux split-window -v -p 50 -t 1 "make -C services/lib BACKEND_URL=http://${backend_hostname}:5000 devel"
   fi
   sudo tmux a -t "${backend_app_name}"
 else
