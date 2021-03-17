@@ -11,6 +11,7 @@ export OFFLINE=${OFFLINE:="no"}
 export REGGAE="no"
 export SYSPKG=${SYSPKG:="no"}
 export LIB=${LIB:="no"}
+export DESIGNER=${DESIGNER:="no"}
 
 
 if [ "${1}" = "reggae" ]; then
@@ -24,6 +25,9 @@ if [ "${REGGAE}" = "yes" ]; then
   sudo tmux split-window -h -p 50 -t 0 "make -C services/frontend BACKEND_URL=http://${backend_hostname}:5000 devel"
   if [ "${LIB}" != "no" ]; then
     sudo tmux split-window -v -p 50 -t 1 "make -C services/lib BACKEND_URL=http://${backend_hostname}:5000 devel"
+  fi
+  if [ "${DESIGNER}" != "no" ]; then
+    sudo tmux split-window -v -p 50 -t 0 "make -C services/designer devel"
   fi
   sudo tmux a -t "${backend_app_name}"
 else
