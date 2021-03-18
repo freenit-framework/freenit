@@ -1,2 +1,2 @@
 DESIGNER = YES
-SERVICES += lib https://github.com/freenit-framework/frontend
+SERVICES += designer https://github.com/freenit-framework/designer
