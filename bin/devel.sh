@@ -18,6 +18,7 @@ if [ "${1}" = "reggae" ]; then
   REGGAE="yes"
 fi
 
+
 if [ "${REGGAE}" = "yes" ]; then
   backend_hostname=$(sudo cbsd jexec user=devel "jname=${backend_app_name}" hostname)
   frontend_hostname=$(sudo cbsd jexec user=devel "jname=${frontend_app_name}front" hostname)
