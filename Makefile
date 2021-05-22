@@ -7,10 +7,6 @@ SERVICES += cli https://github.com/freenit-framework/cli
 SERVICES += startkit https://github.com/freenit-framework/frontend-startkit
 
 do_devel:
-.if defined(service)
-	@${MAKE} ${MAKEFLAGS} -C services/${service} devel offline=${offline}
-.else
 	@env OFFLINE=${offline} REGGAE=yes bin/devel.sh `make service_names`
-.endif
 
 .include <${REGGAE_PATH}/mk/project.mk>
