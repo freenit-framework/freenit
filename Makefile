@@ -6,7 +6,4 @@ SERVICES += designer https://github.com/freenit-framework/designer
 SERVICES += cli https://github.com/freenit-framework/cli
 SERVICES += startkit https://github.com/freenit-framework/frontend-startkit
 
-do_devel:
-	@env OFFLINE=${offline} REGGAE=yes bin/devel.sh `make service_names`
-
 .include <${REGGAE_PATH}/mk/project.mk>
