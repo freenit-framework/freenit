@@ -34,13 +34,13 @@ for service in ${SERVICES}; do
   if [ "${firstone}" = "yes" ]; then
     firstone="no"
     if [ "${REGGAE}" = "yes" ]; then
-      sudo tmux new-session -s "${backend_app_name}" -d "make -C services/${service} devel || sleep 60"
+      sudo tmux new-session -s "${backend_app_name}" -d "make -C services/${service} devel"
     else
       tmux new-session -s "${backend_app_name}" -d "env OFFLINE=${OFFLINE} SYSPKG=${SYSPKG} ${PROJECT_ROOT}/services/${service}/bin/devel.sh"
     fi
   else
     if [ "${REGGAE}" = "yes" ]; then
-      sudo tmux split-window -h -p 50 -t 0 "make -C services/${service} BACKEND_URL=http://${backend_hostname}:5000 devel || sleep 60"
+      sudo tmux split-window -h -p 50 -t 0 "make -C services/${service} BACKEND_URL=http://${backend_hostname}:5000 devel"
     else
       tmux split-window -h -p 50 -t 0 "env OFFLINE=${OFFLINE} BACKEND_URL=http://${backend_hostname}:5000 ${PROJECT_ROOT}/services/${service}/bin/devel.sh"
     fi
