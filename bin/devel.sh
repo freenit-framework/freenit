@@ -18,7 +18,7 @@ for service in ${SERVICES}; do
   if [ "backend" = "${service}" ]; then
     firstone="no"
     if [ "${REGGAE}" = "yes" ]; then
-      export backend_hostname=$(sudo cbsd jexec user=devel "jname=${backend_app_name}" hostname)
+      export backend_hostname=$(sudo reggae jexec -U devel "${backend_app_name}" hostname)
       sudo tmux new-session -s "${backend_app_name}" -d "make -C services/${service} devel offline=${OFFLINE}"
     else
       export backend_hostname="localhost"
