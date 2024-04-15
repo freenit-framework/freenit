@@ -13,15 +13,9 @@ fi
 if [ ! -d "${PROJECT_ROOT}/services/frontend" ]; then
   git clone https://github.com/freenit-framework/frontend "${PROJECT_ROOT}/services/frontend"
 fi
-if [ ! -d "${PROJECT_ROOT}/services/axios" ]; then
-  git clone https://github.com/freenit-framework/axios "${PROJECT_ROOT}/services/axios"
-fi
-if [ ! -d "${PROJECT_ROOT}/services/doc" ]; then
-  git clone https://github.com/freenit-framework/doc "${PROJECT_ROOT}/services/doc"
-fi
 if [ ! -d "${PROJECT_ROOT}/services/designer" ]; then
   git clone https://github.com/freenit-framework/designer "${PROJECT_ROOT}/services/designer"
 fi
-if [ ! -d "${PROJECT_ROOT}/services/designer-svelte" ]; then
-  git clone https://github.com/freenit-framework/designer-svelte "${PROJECT_ROOT}/services/designer-svelte"
+if [ ! -d "${PROJECT_ROOT}/services/doc" ]; then
+  git clone https://github.com/freenit-framework/doc "${PROJECT_ROOT}/services/doc"
 fi

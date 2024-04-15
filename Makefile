@@ -2,10 +2,9 @@ REGGAE_PATH = /usr/local/share/reggae
 FQDN ?= example.com
 USE = letsencrypt ldap
 SERVICES += backend https://github.com/freenit-framework/backend
-SERVICES += axios https://github.com/freenit-framework/doc
-SERVICES += doc https://github.com/freenit-framework/doc
+SERVICES += frontend https://github.com/freenit-framework/frontend
 SERVICES += designer https://github.com/freenit-framework/designer
-SERVICES += svelte-base https://github.com/freenit-framework/svelte-base
+SERVICES += doc https://github.com/freenit-framework/doc
 BACKEND != reggae get-config BACKEND
 CBSD_WORKDIR != sysrc -s cbsd -n cbsd_workdir 2>/dev/null || true
 
