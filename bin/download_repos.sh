@@ -22,6 +22,3 @@ fi
 if [ ! -d "${PROJECT_ROOT}/services/designer" ]; then
   git clone https://github.com/freenit-framework/designer "${PROJECT_ROOT}/services/designer"
 fi
-if [ ! -d "${PROJECT_ROOT}/services/designer-svelte" ]; then
-  git clone https://github.com/freenit-framework/designer-svelte "${PROJECT_ROOT}/services/designer-svelte"
-fi
