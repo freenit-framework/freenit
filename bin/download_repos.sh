@@ -16,6 +16,6 @@ fi
 if [ ! -d "${PROJECT_ROOT}/services/designer" ]; then
   git clone https://github.com/freenit-framework/designer "${PROJECT_ROOT}/services/designer"
 fi
-if [ ! -d "${PROJECT_ROOT}/services/doc" ]; then
+if [ ! -d "${PROJECT_ROOT}/services/freenit-framework.github.io" ]; then
   git clone https://github.com/freenit-framework/doc "${PROJECT_ROOT}/services/doc"
 fi
