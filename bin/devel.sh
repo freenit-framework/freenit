@@ -18,8 +18,8 @@ for service in ${SERVICES}; do
   if [ "backend" = "${service}" ]; then
     firstone="no"
     if [ "${REGGAE}" = "yes" ]; then
-      export backend_hostname=$(sudo reggae jexec -U devel "${backend_app_name}" hostname)
-      sudo tmux new-session -s "${backend_app_name}" -d "make -C services/${service} devel offline=${OFFLINE}"
+      export backend_hostname=$(mdo reggae jexec -U devel "${backend_app_name}" hostname)
+      mdo tmux new-session -s "${backend_app_name}" -d "make -C services/${service} devel offline=${OFFLINE} || sleep 60"
     else
       export backend_hostname="localhost"
       tmux new-session -s "${backend_app_name}" -d "env OFFLINE=${OFFLINE} SYSPKG=${SYSPKG} ${PROJECT_ROOT}/services/${service}/bin/devel.sh"
@@ -34,13 +34,13 @@ for service in ${SERVICES}; do
   if [ "${firstone}" = "yes" ]; then
     firstone="no"
     if [ "${REGGAE}" = "yes" ]; then
-      sudo tmux new-session -s "${backend_app_name}" -d "make -C services/${service} devel offline=${OFFLINE}"
+      mdo tmux new-session -s "${backend_app_name}" -d "make -C services/${service} devel offline=${OFFLINE} || sleep 60"
     else
       tmux new-session -s "${backend_app_name}" -d "env OFFLINE=${OFFLINE} SYSPKG=${SYSPKG} ${PROJECT_ROOT}/services/${service}/bin/devel.sh"
     fi
   else
     if [ "${REGGAE}" = "yes" ]; then
-      sudo tmux split-window -h -p 50 -t 0 "make -C services/${service} BACKEND_URL=http://${backend_hostname}:5000 devel offline=${OFFLINE}"
+      mdo tmux split-window -h -p 50 -t 0 "make -C services/${service} BACKEND_URL=http://${backend_hostname}:5000 devel offline=${OFFLINE} || sleep 60"
     else
       tmux split-window -h -p 50 -t 0 "env OFFLINE=${OFFLINE} BACKEND_URL=http://${backend_hostname}:5000 ${PROJECT_ROOT}/services/${service}/bin/devel.sh"
     fi
@@ -48,8 +48,8 @@ for service in ${SERVICES}; do
 done
 
 if [ "${REGGAE}" = "yes" ]; then
-  sudo tmux select-layout tiled
-  sudo tmux a -t "${backend_app_name}"
+  mdo tmux select-layout tiled
+  mdo tmux a -t "${backend_app_name}"
 else
   tmux select-layout tiled
   tmux a -t "${backend_app_name}"
